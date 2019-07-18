@@ -20,9 +20,12 @@ while True:
             diff_frame -= diff_frame.min()
             #The difference is calculated is an array value which is converted back to a video frame for displaying
             disp_frame = np.uint8(255.0*diff_frame/float(diff_frame.max()))
-            cv2.imshow('diff_frame',disp_frame)
+            diff_frame = cv2.fastNlMeansDenoising(diff_frame,None,10,7,21)
+            median = cv2.medianBlur(diff_frame, 5)
+            contrast = np.concatenate((diff_frame, median), axis=1)
+            cv2.imshow('diff_frame',contrast)
             #Time delay between refreshing of frames is done every two seconds
-            time.sleep(2)
+           # time.sleep(2)
         old_frame = gray
 
         if cv2.waitKey(30) & 0xFF == ord('q'):

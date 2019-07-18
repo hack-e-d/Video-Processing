@@ -37,7 +37,7 @@ while(True):
     cv2.putText(frame2, "SD - {}".format(round(stDev[0][0],0)), (10, 30), font, .5, (255, 0, 255), 1, cv2.LINE_AA)
     cv2.putText(frame2, "Time -"+str(currentDT), (160, 30), font, .7, (255, 0, 255), 1, cv2.LINE_AA)
     if stDev > sdThresh:
-            print("Motion detected.. Do something!!!",stDev)
+            print("Motion detected.. Do something!!!")
             time.sleep(1)
             cv2.imwrite('intruder.jpg',frame2)
             break

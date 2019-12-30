@@ -1,3 +1,4 @@
+#Convert a video from mp4 to avi format without loss of resolution and frame rate 
 import imageio
 
 src_dir = "test2.mp4"

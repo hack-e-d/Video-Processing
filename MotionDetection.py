@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import datetime
 import time
-sdThresh = 6
+sdThresh = 10
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 def distMap(frame1, frame2):
